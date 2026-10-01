@@ -28,8 +28,8 @@ jobs:
     needs: build_test
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
-        with:
-          service-id: ${{ secrets.SERVICE_ID }}
-          api-key: ${{ secrets.API_KEY }}
+    - uses: JorgeLNJunior/render-deploy@v1.5.0
+      with:
+        service_id: ${{ secrets.SERVICE_ID }}
+        api_key: ${{ secrets.API_KEY }}
+        wait_deploy: true
